@@ -4,6 +4,29 @@
 	use Psr\Http\Message\ServerRequestInterface as Request;
 	use Slim\Factory\AppFactory;
 
+	/**
+     * @OA\post(
+     *     path="/Category",
+     *     summary="Creates new category.",
+     *     tags={"Categories"},
+     *     requestBody=@OA\RequestBody(
+     *         request="/Category",
+     *         required=true,
+     *         description="The Category information is passed to the server via the request body.",
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 @OA\Property(property="active", type="boolean", example="1"),
+     *                 @OA\Property(property="name", type="string", example="electronics")
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(response="201", description="Category was succesfully created."),
+     * 	   @OA\Response(response="400", description="The client forgot to fill in the text fields"),
+     *     @OA\Response(response="500", description="Internal server error.")
+     * )
+     */
+
 
 
 	$app->post("/Category", function (Request $request, Response $response, $args) {

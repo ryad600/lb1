@@ -6,26 +6,27 @@
 
 	/**
      * @OA\Delete(
-     *     path="/Category/{category/id}",
+     *     path="/Category/{category_id}",
      *     summary="Deletes the category with the same category id.",
-     *     tags={Categories},
+     *     tags={"Categories"},
      *     @OA\Parameter(
      *         name="category_id",
-     *         in="Category/category_id",
+     *         in="path",
      *         required=true,
-     *         description="Used to identfy which category the client wants to delete",
+     *         description="Used to identfy which category the client wants to delete.",
      *         @OA\Schema(
      *             type="interger",
      *             example="1"
      *         )
      *     ),
-     *     @OA\Response(response="200", description="category was succesfully deleted"))
-     * 	   @OA\Response(response="400", description="The client forgot to fill in the text fields"))
-     *     @OA\Response(response="404", description="The category that the client was searching for was not found."))
-     *     @OA\Response(response="500", description="Internal server error."))
-     * 	   
+     *     @OA\Response(response="200", description="category was succesfully deleted"),
+     * 	   @OA\Response(response="400", description="The client forgot to fill in the text fields"),
+     *     @OA\Response(response="404", description="The category that the client was searching for was not found."),
+     *     @OA\Response(response="500", description="Internal server error.")
      * )
 	 */
+
+
 	
 	$app->delete("/Category/{category_id}", function (Request $request, Response $response, $args) {
 

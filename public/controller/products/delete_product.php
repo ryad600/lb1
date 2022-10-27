@@ -4,28 +4,28 @@
 	use Psr\Http\Message\ServerRequestInterface as Request;
 	use Slim\Factory\AppFactory;
 	
+
 	/**
      * @OA\Delete(
-     *     path="/Product/{product/id}",
+     *     path="/Product/{product_id}",
      *     summary="Deletes the product with the same product id.",
-     *     tags={Products},
+     *     tags={"Products"},
      *     @OA\Parameter(
      *         name="product_id",
-     *         in="Product/product_id",
+     *         in="path",
      *         required=true,
-     *         description="Used to identfy which product the client wants to delete",
+     *         description="Used to identfy which product the client wants to delete.",
      *         @OA\Schema(
      *             type="interger",
      *             example="1"
      *         )
      *     ),
-     *     @OA\Response(response="200", description="Product was succesfully deleted"))
-     * 	   @OA\Response(response="400", description="The client forgotto fill in the text fields"))
-     *     @OA\Response(response="404", description="The Product that the client was searching for was not found."))
-     *     @OA\Response(response="500", description="Internal server error."))
-     * 	   
+     *     @OA\Response(response="200", description="product was succesfully deleted"),
+     * 	   @OA\Response(response="400", description="The client forgot to fill in the text fields"),
+     *     @OA\Response(response="404", description="The product that the client was searching for was not found."),
+     *     @OA\Response(response="500", description="Internal server error.")
      * )
-	 */
+	 */	
 
 
 	$app->delete("/Product/{product_id}", function (Request $request, Response $response, $args) {

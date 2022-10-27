@@ -3,7 +3,44 @@
 	use Psr\Http\Message\ServerRequestInterface as Request;
 	use Slim\Factory\AppFactory;
 
-
+    /**
+     * @OA\put(
+     *     path="/Product/{product_id}",
+     *     summary="Edits an existing product.",
+     *     tags={"Products"},
+     *         @OA\Parameter(
+     *         name="product_id",
+     *         in="path",
+     *         required=true,
+     *         description="Used to find the specified product.",
+     *         @OA\Schema(
+     *             type="integer",
+     *             example="1"
+     *         )
+     *     ),
+     *     requestBody=@OA\RequestBody(
+     *         request="/Product/{product_id}",
+     *         required=true,
+     *         description="The Product information is passed to the server via the request body.",
+     *         @OA\MediaType(
+     *             mediaType="application/json",
+     *             @OA\Schema(
+     *                 @OA\Property(property="sku", type="string", example="banana-bread"),
+     *                 @OA\Property(property="active", type="boolean", example="1"),
+     * 				   @OA\Property(property="id_category", type="integer", example="2"),
+     * 				   @OA\Property(property="name", type="string", example="cheese"),
+     *                 @OA\Property(property="image", type="string", example="link"),
+     * 				   @OA\Property(property="description", type="string", example="this is cheese"),
+     * 				   @OA\Property(property="price", type="float", example="5"),
+     * 				   @OA\Property(property="stock", type="integer", example="120")
+     *             )
+     *         )
+     *     ),
+     *     @OA\Response(response="201", description="Product was succesfully created."),
+     * 	   @OA\Response(response="400", description="The client forgot to fill in the text fields"),
+     *     @OA\Response(response="500", description="Internal server error.")
+     * )
+     */
 
 	$app->put("/Product/{product_id}", function (Request $request, Response $response, $args) {
 		//Check the client's authentication.
