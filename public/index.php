@@ -8,6 +8,8 @@
 	require __DIR__ . "/../vendor/autoload.php";
 	require_once "config/config.php";
 	require "model/product.php";
+	require "model/category.php";
+	require "model/id_check.php";
 
 
 	$app = AppFactory::create();
@@ -47,7 +49,9 @@
 					  "put_category",
 					  "delete_category");
 
-	for ($i = 1; $i < count($product); $i++) { 
+	
+
+	for ($i = 1; $i < 6; $i++) { 
 		require "controller/products/" . $product[($i - 1)] . ".php";
 	}
 	for ($i = 1; $i < count($category); $i++) { 
