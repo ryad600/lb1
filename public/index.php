@@ -54,7 +54,7 @@
 	for ($i = 1; $i < 6; $i++) { 
 		require "controller/products/" . $product[($i - 1)] . ".php";
 	}
-	for ($i = 1; $i < count($category); $i++) { 
+	for ($i = 1; $i < 6; $i++) { 
 		require "controller/categories/" . $category[($i - 1)] . ".php";
 	}
 
