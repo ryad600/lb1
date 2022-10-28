@@ -41,7 +41,7 @@
 		/**
 		 * This funktion is to view a specific category.
 		 * @param $category_id is to identify which category should be viewed.
-		 * @returns $category the category that was specified
+		 * @returns $category the category that was specified.
 		 */
 		function get_one_category($category_id) {
 			global $database;
@@ -89,6 +89,7 @@
 		 * This funktion is to delete a specific category.
 		 * @param $category_id is to identify which category should be deleted.
 		 * @returns true if succesful.
+		 * @returns flase if failed.
 		 */
 		function delete_category($category_id) {
 			global $database;
