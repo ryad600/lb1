@@ -1,6 +1,17 @@
 <?php
 		require "database.php";
-
+		/**
+		 * This funktion is to create a new product.
+		 * @param $sku is the identifier of the product.
+		 * @param $active shows if product is active or not.
+		 * @param $id_category shows in what category it belongs.
+		 * @param $name shows its name.
+		 * @param $image is a ling to an image of the prpduct.
+		 * @param $description shows what the product is.
+		 * @param $price shows the price of the product.
+		 * @param $stock shows how many are left.
+		 * @returns true if succesfull.
+		 */
 		function create_new_product($sku, $active, $id_category, $name, $image, $description, $price, $stock) {
 			global $database;
 
@@ -14,7 +25,20 @@
 			}
 
 		}
-
+		/**
+		 * This funktion is to create a new product.
+		 * @param $product_id is to identify which product should be edited.
+		 * @param $sku is the identifier of the product.
+		 * @param $active shows if product is active or not.
+		 * @param $id_category shows in what category it belongs.
+		 * @param $name shows its name.
+		 * @param $image is a ling to an image of the prpduct.
+		 * @param $description shows what the product is.
+		 * @param $price shows the price of the product.
+		 * @param $stock shows how many are left.
+		 * @returns true if succesfull.
+		 * @returns false if failed.
+		 */
 		function update_product($product_id, $sku, $active, $id_category, $name, $image, $description, $price, $stock) {
 			global $database;
 
@@ -26,7 +50,11 @@
 				return true;
 			}
 		}
-
+		/**
+		 * This funktion is to view a specific product.
+		 * @param $category_id is to identify which product should be viewed.
+		 * @returns $product the product that was specified.
+		 */
 		function get_one_product($product_id) {
 			global $database;
 
@@ -45,7 +73,10 @@
 
 			return $product;
 		}
-
+		/**
+		 * This funktion is to view all products.
+		 * @returns $products all products. 
+		 */
 		function get_all_products() {
 			global $database;
 
@@ -66,7 +97,12 @@
 
 			return $products;
 		}
-
+		/**
+		 * This funktion is to delete a specific product.
+		 * @param $product_id is to identify which product should be deleted.
+		 * @returns true if succesful.
+		 * @returns flase if failed.
+		 */
 		function delete_product($product_id) {
 			global $database;
 
