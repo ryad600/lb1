@@ -7,11 +7,11 @@
 
 /**
      * @OA\Post(
-     *     path="/Authenticate",
+     *     path="/Login",
      *     summary="Client can authenticate themself with username and password and get a token.",
      *     tags={"Authentication"},
      *     requestBody=@OA\RequestBody(
-     *         request="/Authenticate",
+     *         request="/Login",
      *         required=true,
      *         description="username and password are needed.",
      *         @OA\MediaType(
@@ -23,7 +23,7 @@
      *         )
      *     ),
      *     @OA\Response(response="200", description="Authentication succesful."),
-     * 	 @OA\Response(response="401", description="invalid Credentials."))
+     * 	   @OA\Response(response="401", description="invalid Credentials."))
      * )
 	*/
 
