@@ -1,6 +1,11 @@
 <?php
 		require "database.php";
-
+		/**
+		 * This funktion is to create a new category.
+		 * @param $active shows if category is active or not.
+		 * @param $name has the name of the new category.
+		 * @returns true if succesfull.
+		 */
 		function create_new_category($active, $name) {
 			global $database;
 
@@ -14,7 +19,14 @@
 			}
 
 		}
-
+		/**
+		 * This funktion is to update an existing category.
+		 * @param $category_id is to identify which category should be edited.
+		 * @param $active shows if category is active or not.
+		 * @param $name has the name of the new category.
+		 * @returns true if succesfull.
+		 * @returns false on fail.
+		 */
 		function update_category($category_id, $active, $name) {
 			global $database;
 
@@ -26,7 +38,11 @@
 				return true;
 			}
 		}
-
+		/**
+		 * This funktion is to view a specific category.
+		 * @param $category_id is to identify which category should be viewed.
+		 * @returns $category the category that was specified
+		 */
 		function get_one_category($category_id) {
 			global $database;
 
@@ -45,7 +61,10 @@
 
 			return $category;
 		}
-
+		/**
+		 * This funktion is to view all categories.
+		 * @returns $categories all categories. 
+		 */
 		function get_all_categories() {
 			global $database;
 
@@ -66,7 +85,11 @@
 
 			return $categories;
 		}
-
+		/**
+		 * This funktion is to delete a specific category.
+		 * @param $category_id is to identify which category should be deleted.
+		 * @returns true if succesful.
+		 */
 		function delete_category($category_id) {
 			global $database;
 
