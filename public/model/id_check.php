@@ -1,5 +1,10 @@
 <?php 
-
+	/**
+	 * This funktion is to check if the given category exists.
+	 * @param $id is to identify which category has to be checked.
+	 * @returns true if succesfull.
+	 * @returns false if failed.
+	 */
 	function check_category_id($id) {
 		global $database;
 
@@ -13,7 +18,12 @@
 			
 		}
 	}
-
+	/**
+	 * This funktion is to check if the given product exists.
+	 * @param $id is to identify which product has to be checked.
+	 * @returns true if succesfull.
+	 * @returns false if failed.
+	 */
 	function check_product_id($id) {
 		global $database;
 
