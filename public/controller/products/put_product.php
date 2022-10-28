@@ -36,7 +36,7 @@
      *             )
      *         )
      *     ),
-     *     @OA\Response(response="201", description="Product was succesfully created."),
+     *     @OA\Response(response="201", description="Product was succesfully updated."),
      * 	   @OA\Response(response="400", description="The client forgot to fill in the text fields"),
      *     @OA\Response(response="500", description="Internal server error.")
      * )
